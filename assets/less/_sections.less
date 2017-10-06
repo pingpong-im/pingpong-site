@@ -1,0 +1,145 @@
+.section {
+  position: relative;
+  padding: 50px 0;
+
+  .container {
+
+    position: relative;
+    z-index: 10;
+
+  }
+
+  h2 {
+    font: 40px/1 'SF-UI-Display-Semibold';
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+  }
+
+  .bg {
+    position: absolute;
+    z-index: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.section-1 {
+  padding: 160px 0 50px 0;
+
+  .print {
+    margin-left: -210px;
+  }
+
+  h1 {
+    font: 46px/1 'SF-UI-Display-Ultralight';
+    color: #00151f;
+    margin-bottom: 50px;
+  }
+
+  form {
+    margin-bottom: 240px;
+
+    .form-input {
+      display: inline-block;
+      font: 16px/56px 'SFUIText-Light';
+      height: 56px;
+      color: #00151f;
+      border: 1px solid #fade23;
+      border-radius: 56px;
+      padding: 0 22px;
+      outline: none;
+      width: 500px;
+      margin-right: 35px;
+    }
+
+    .submit {
+      display: inline-block;
+      font: 29px/1 'SFUIText-LightItalic';
+      outline: none;
+      height: 56px;
+      border-radius: 56px;
+      padding: 0 50px;
+      background: #fade23;
+      color: #00151f;
+    }
+
+  }
+
+
+  .bg-left {
+    top: -84px;
+    left: 0;
+  }
+
+  .bg-right {
+    top: -84px;
+    right: 0;
+  }
+}
+
+.section-2 {
+
+  .notebook {
+    margin-left: -60px;
+  }
+
+  .colorful-text {
+    font: 18px/30px 'Open Sans', sans-serif;
+    color: #000;
+
+    em {
+      font-style: italic;
+      color: #f0f;
+
+      &.cond {
+        font-family: 'OpenSans-CondLightItalic';
+        color: #f00;
+      }
+    }
+
+    strong {
+
+      font-weight: 800;
+      color: #00f;
+
+    }
+
+    mark {
+      padding: 0 2px;
+      &.black {
+        background: #000;
+        color: #fff;
+      }
+
+      &.red {
+        background: #f00;
+        font-weight: 600;
+      }
+
+      &.green {
+        background: #0f0;
+        color: #00f;
+      }
+    }
+  }
+
+  .bg-top-right {
+    top: 0;
+    right: 0;
+  }
+
+  .bg-left {
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+  }
+
+  .bg-right {
+    top: -500px;
+    right: 0;
+  }
+
+}

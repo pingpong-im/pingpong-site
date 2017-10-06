@@ -25,8 +25,8 @@ gulp.task('serve', function () {
             baseDir: "./public/"
         }
     });
-    gulp.watch("./assets/less/*.less").on("change", reload);
-    gulp.watch("./public/*.html").on("change", reload);
+    gulp.watch('./assets/less/*.less').on('change', reload);
+    gulp.watch('./public/*.html').on('change', reload);
 });
 
 
