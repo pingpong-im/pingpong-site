@@ -47,16 +47,10 @@
     margin-bottom: 240px;
 
     .form-input {
-      display: inline-block;
       font: 16px/56px 'SFUIText-Light';
-      height: 56px;
-      color: #00151f;
-      border: 1px solid #fade23;
-      border-radius: 56px;
-      padding: 0 22px;
-      outline: none;
-      width: 500px;
       margin-right: 35px;
+      height: 56px;
+      border-radius: 56px;
     }
 
     .submit {
@@ -252,5 +246,164 @@
   .bg-left {
     top: 150px;
     left: 0;
+  }
+}
+
+.converter {
+  flex-wrap: wrap;
+  .currency {
+    font: 400 18px/30px 'Open Sans', sans-serif;
+    color: #b3b3b3;
+    padding-left: 40px;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
+
+    &.active {
+      color: #000;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url('../img/thumb-up.png') center/cover;
+        width: 19px;
+        height: 31px;
+        vertical-align: text-bottom;
+        margin-right: 5px;
+        margin-left: -24px;
+      }
+    }
+
+  }
+
+  .form-input {
+    font: 400 26px/64px 'Open Sans', sans-serif;
+    text-align: center;
+    height: 64px;
+    border-radius: 64px;
+    width: 520px;
+  }
+
+  .transfer {
+    margin: 70px 0 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .copy-link {
+    cursor: pointer;
+  }
+}
+
+.section-5 {
+  .bg-right {
+    bottom: -50px;
+    right: 0;
+  }
+}
+
+.section-6 {
+
+  .slick-slide {
+    outline: none;
+  }
+
+  .slick-list {
+
+    width: calc(~'100% - 104px');
+    margin: 0 auto;
+
+  }
+
+  .slick-prev, .slick-next {
+    position: absolute;
+    width: 52px;
+    height: 53px;
+
+    &:before {
+      display: block;
+      width: 52px;
+      height: 53px;
+    }
+
+  }
+
+  .slick-prev {
+
+    left: 0;
+
+    &:before {
+
+      content: '';
+      background: url('../img/arrow-circle-red.png') center;
+
+    }
+
+  }
+
+  .slick-next {
+
+    right: 0;
+
+    &:before {
+
+      content: '';
+      background: url('../img/arrow-circle-dark-blue.png') center;
+
+    }
+
+  }
+}
+
+.section-7 {
+  .member {
+    text-align: center;
+    width: 376px;
+    margin-bottom: 50px;
+
+    &__photo {
+      background: url('../img/team-bg.png') center no-repeat;
+      background-size: 376px 215px;
+    }
+    &__name {
+      font: 32px/1 'SHPinscher-Regular';
+      color: #00f;
+      span {
+        background: #00f;
+        color: #fff;
+        padding: 0 2px;
+      }
+    }
+    &__profession {
+      font: 700 22px/25px 'Open Sans', sans-serif;
+    }
+  }
+
+  .bg-left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .bg-right {
+    bottom: 100px;
+    right: 0;
+  }
+}
+
+.section-8 {
+  .row {
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 0 50px;
+    }
+  }
+
+  .bg-left {
+    top: 50%;
+    left: 90px;
   }
 }
