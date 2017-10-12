@@ -7,6 +7,11 @@
     position: relative;
     z-index: 10;
 
+    & * {
+      position: relative;
+      z-index: 10;
+    }
+
   }
 
   h2 {
@@ -19,15 +24,6 @@
       vertical-align: middle;
     }
   }
-
-  .bg {
-    position: absolute;
-    z-index: 1;
-
-    img {
-      width: 100%;
-    }
-  }
 }
 
 .section-1 {
@@ -35,6 +31,11 @@
 
   .print {
     margin-left: -210px;
+  }
+
+  .ping-pong-img {
+    width: 100%;
+    max-width: 672px;
   }
 
   h1 {
@@ -51,6 +52,7 @@
       margin-right: 35px;
       height: 56px;
       border-radius: 56px;
+      margin-bottom: 10px;
     }
 
     .submit {
@@ -62,18 +64,16 @@
       padding: 0 50px;
       background: #fade23;
       color: #00151f;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background: #ffe61b;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+      }
     }
 
-  }
-
-  .bg-left {
-    top: -84px;
-    left: 0;
-  }
-
-  .bg-right {
-    top: -84px;
-    right: 0;
   }
 }
 
@@ -104,17 +104,6 @@
       }
 
     }
-  }
-
-  .bg-left {
-    top: 50%;
-    left: 40px;
-    transform: translateY(-50%);
-  }
-
-  .bg-right {
-    top: -500px;
-    right: 0;
   }
 
 }
@@ -212,7 +201,7 @@
         top: -5px;
         right: -5px;
         height: 8px;
-        width: 300px;
+        width: 50%;
       }
       &.line-two {
         position: absolute;
@@ -226,7 +215,7 @@
         bottom: -5px;
         right: -5px;
         height: 8px;
-        width: 190px;
+        width: 25%;
       }
     }
 
@@ -241,11 +230,6 @@
         background: #f0f;
       }
     }
-  }
-
-  .bg-left {
-    top: 150px;
-    left: 0;
   }
 }
 
@@ -294,13 +278,6 @@
 
   .copy-link {
     cursor: pointer;
-  }
-}
-
-.section-5 {
-  .bg-right {
-    bottom: -50px;
-    right: 0;
   }
 }
 
@@ -380,16 +357,6 @@
       font: 700 22px/25px 'Open Sans', sans-serif;
     }
   }
-
-  .bg-left {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-  .bg-right {
-    bottom: 100px;
-    right: 0;
-  }
 }
 
 .section-8 {
@@ -399,6 +366,14 @@
 
     img {
       margin: 0 50px;
+
+      &.go {
+        width: 617px;
+      }
+
+      &.slot {
+        width: 320px;
+      }
     }
   }
 
