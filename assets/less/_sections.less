@@ -15,7 +15,7 @@
   }
 
   h2 {
-    font: 40px/1 'SF-UI-Display-Semibold';
+    font: 36px/1 'SF-UI-Display-Semibold';
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 8px;
@@ -31,15 +31,16 @@
 
   .print {
     margin-left: -210px;
+    height: 55px;
   }
 
   .ping-pong-img {
     width: 100%;
-    max-width: 672px;
+    max-width: 530px;
   }
 
   h1 {
-    font: 46px/1 'SF-UI-Display-Ultralight';
+    font: 36px/1 'SF-UI-Display-Ultralight';
     color: #00151f;
     margin-bottom: 50px;
   }
@@ -57,19 +58,19 @@
 
     .submit {
       display: inline-block;
-      font: 29px/1 'SFUIText-LightItalic';
+      font: 24px/1 'SFUIText-LightItalic';
       outline: none;
       height: 56px;
       border-radius: 56px;
       padding: 0 50px;
-      background: #fade23;
+      background: #ff0;
       color: #00151f;
       margin-bottom: 10px;
       cursor: pointer;
       transition: all .3s;
 
       &:hover {
-        background: #ffe61b;
+        background: #fade23;
         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
       }
     }
@@ -110,7 +111,7 @@
 
 .section-3 {
   h3 {
-    font: 800 18px/1 'Open Sans', sans-serif;
+    font: 800 16px/1 'Open Sans', sans-serif;
     margin-bottom: 12px;
   }
 
@@ -156,12 +157,28 @@
     }
   }
 
+  .row {
+    align-items: flex-start;
+  }
+
   .news {
     border: 2px solid #838383;
     width: 50%;
     position: relative;
     &:not(:last-child) {
       margin-right: 50px;
+    }
+
+    .js-accordion {
+      img {
+        transition: all .3s;
+      }
+
+      &.open {
+        img {
+          transform: rotate(180deg);
+        }
+      }
     }
 
     &__title {
@@ -182,7 +199,15 @@
 
     &__content {
       padding: 10px 25px;
-      font: 300 18px/30px 'Open Sans', sans-serif;
+      font: 300 16px/30px 'Open Sans', sans-serif;
+
+      &--full {
+        display: none;
+
+        p {
+          text-align: left !important;
+        }
+      }
     }
 
     p {
@@ -236,7 +261,7 @@
 .converter {
   flex-wrap: wrap;
   .currency {
-    font: 400 18px/30px 'Open Sans', sans-serif;
+    font: 400 16px/30px 'Open Sans', sans-serif;
     color: #b3b3b3;
     padding-left: 40px;
     cursor: pointer;
@@ -285,6 +310,14 @@
 
   .slick-slide {
     outline: none;
+    text-align: center;
+    padding: 0 25px;
+    opacity: 0.5;
+    transition: all .3s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .slick-list {
@@ -363,6 +396,25 @@
   .row {
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    #yes {
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      left: 250px;
+      top: 340px;
+      z-index: 15;
+    }
+
+    #no {
+      position: absolute;
+      width: 110px;
+      height: 50px;
+      left: 460px;
+      top: 340px;
+      z-index: 15;
+    }
 
     img {
       margin: 0 50px;

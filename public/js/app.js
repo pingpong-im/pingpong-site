@@ -3,6 +3,8 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 1280,
@@ -23,9 +25,36 @@ $(document).ready(function () {
                     slidesToScroll: 1
                 }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     });
+
+    $('.js-accordion').on('click', function () {
+        $(this).parent().find('.js-accordion-content').slideToggle();
+        $(this).toggleClass('open');
+    });
+
+    $('.currency').on('click', function () {
+        $(this).parent().find('.active').removeClass('active');
+        $(this).addClass('active');
+    });
+    
+    $('#yes').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    $('#no').on('click', function () {
+        $('#newsletter').fadeIn();
+        $('.modal-overlay').fadeIn();
+        $('html').addClass('modal-open');
+    });
+
+    $('.js-close-modal').on('click', function () {
+        $(this).parent().fadeOut();
+        $('.modal-overlay').fadeOut();
+        $('html').removeClass('modal-open');
+    })
+
+
+
 });

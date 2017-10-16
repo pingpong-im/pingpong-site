@@ -40,7 +40,7 @@
             <button class="submit">Stay with me</button>
         </form>
         <div>
-            <img src="./img/arrow-circle-blue.png" alt="Ping Pong" title="Ping Pong">
+            <img src="./img/arrow-circle-blue.png" alt="Ping Pong" title="Ping Pong" height="60">
         </div>
 
         <div class="bg bg-right">
@@ -233,7 +233,15 @@
                         making it over 2000 years old. Richard McClintock,
                         a Latin professor at Hampden-Sydney College in Virginia.
                     </p>
-                    <p><img src="./img/arrow-double-down.png" alt="" title=""></p>
+                    <div class="news__content--full js-accordion-content">
+                        <p>
+                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock,
+                            a Latin professor at Hampden-Sydney College in Virginia.
+                        </p>
+                    </div>
+                    <p class="js-accordion"><img src="./img/arrow-double-down.png" alt="" title=""></p>
                 </div>
 
                 <div class="line line-one"></div>
@@ -252,7 +260,15 @@
                         making it over 2000 years old. Richard McClintock,
                         a Latin professor at Hampden-Sydney College in Virginia.
                     </p>
-                    <p><img src="./img/arrow-double-down.png" alt="" title=""></p>
+                    <div class="news__content--full js-accordion-content">
+                        <p>
+                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            It has roots in a piece of classical Latin literature from 45 BC,
+                            making it over 2000 years old. Richard McClintock,
+                            a Latin professor at Hampden-Sydney College in Virginia.
+                        </p>
+                    </div>
+                    <p class="js-accordion"><img src="./img/arrow-double-down.png" alt="" title=""></p>
                 </div>
 
                 <div class="line line-one"></div>
@@ -301,17 +317,18 @@
     <div class="container">
         <h2>Partners <img src="./img/skull.png" alt="" title=""></h2>
         <div class="slider js-partners">
-            <a href="javascript: void(0)"><img src="./img/adobe-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/dawntown-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/fedex-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/logotype-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/paint-slide.png" alt="" title=""></a>
+            <a href="https://hypethon.cryptofriends.io/" target="_blank"><img src="./img/logo_1.png" alt="" title=""></a>
+            <a href="https://bntouch.com/" target="_blank"><img src="./img/logo_2.png" alt="" title=""></a>
+            <a href="https://blockv.io/" target="_blank"><img src="./img/logo_3.png" alt="" title=""></a>
+            <a href="https://bits.media/" target="_blank"><img src="./img/logo_4.png" alt="" title=""></a>
+            <a href="https://forklog.com/" target="_blank"><img src="./img/logo_5.png" alt="" title=""></a>
 
-            <a href="javascript: void(0)"><img src="./img/adobe-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/dawntown-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/fedex-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/logotype-slide.png" alt="" title=""></a>
-            <a href="javascript: void(0)"><img src="./img/paint-slide.png" alt="" title=""></a>
+
+            <a href="https://hypethon.cryptofriends.io/" target="_blank"><img src="./img/logo_1.png" alt="" title=""></a>
+            <a href="https://bntouch.com/" target="_blank"><img src="./img/logo_2.png" alt="" title=""></a>
+            <a href="https://blockv.io/" target="_blank"><img src="./img/logo_3.png" alt="" title=""></a>
+            <a href="https://bits.media/" target="_blank"><img src="./img/logo_4.png" alt="" title=""></a>
+            <a href="https://forklog.com/" target="_blank"><img src="./img/logo_5.png" alt="" title=""></a>
         </div>
     </div>
 </section>
@@ -377,6 +394,8 @@
 <section class="section section-8">
     <div class="container">
         <div class="row">
+            <div id="yes"></div>
+            <div id="no"></div>
             <img class="go" src="./img/game-over.png" alt="" title="">
             <img class="slot" src="./img/slot-machine.png" alt="" title="">
         </div>
@@ -407,6 +426,17 @@
         </div>
     </div>
 </footer>
+
+<div class="modal w__400" id="newsletter">
+    <div class="close js-close-modal"><img src="./img/close-red.png" alt="" title=""></div>
+    <div class="modal-content">
+        <form>
+            <input type="email" class="form-input" placeholder="email"><br>
+            <button class="submit">Stay with me</button>
+        </form>
+    </div>
+</div>
+<div class="modal-overlay"></div>
 
 <script src="./js/jquery.min.js"></script>
 <script src="./js/slick/slick.min.js"></script>
