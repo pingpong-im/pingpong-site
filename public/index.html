@@ -28,11 +28,8 @@
 </header>
 <section class="section section-1">
     <div class="container text-center">
-        <div class="m-b-100">
-            <img class="print" src="./img/print.png" alt="Print" title="Print">
-        </div>
         <div class=" m-b-40">
-            <img class="ping-pong-img" src="./img/pingpong.png" alt="Ping Pong" title="Ping Pong">
+            <img class="ping-pong-img" src="./img/svg/pp_logo.svg" alt="Ping Pong" title="Ping Pong">
         </div>
         <h1>PLATFORM FOR START-UP'S OF TOKENOMICA AGE</h1>
         <form>
@@ -65,9 +62,7 @@
                     of your start-up and
                     <mark class="bg-red bold">pay</mark>
                     for completed work
-                    <mark class="bg-green blue">
-                        <del>with crypto-currency.</del>
-                    </mark>
+                    <mark class="bg-green blue">with crypto-currency.</mark>
                 </p>
                 <p class="colorful-text">
                     The base functionality to <span class="italic pink ">issue your own token</span> gives startupers an
@@ -290,16 +285,16 @@
                 <p class="converter-title m-b-25">
                     <span class="curr-title extrabold m-r-60">Your transfer:</span>
 
-                    <span class="currency active">Bitcoin (BTC)</span>
-                    <span class="currency">Ethereum (ETH)</span>
+                    <span class="currency active" data-currency="bit">Bitcoin (BTC)</span>
+                    <span class="currency" data-currency="eth">Ethereum (ETH)</span>
                 </p>
-                <input type="text" class="form-input">
+                <input id="currency" class="form-input">
             </div>
             <div>
                 <p class="m-b-25">
                     <span class="extrabold">You get tokens</span>
                 </p>
-                <input type="text" class="form-input">
+                <input id="tokens" class="form-input">
             </div>
             <div class="transfer colorful-text">
                 <p class="m-b-30">Transfer <span class="extrabold italic blue">BTC</span> to the address to receive tokens:</p>
@@ -426,6 +421,8 @@
         </div>
     </div>
 </footer>
+
+<a href="./about.html" class="presale"></a>
 
 <div class="modal w__400" id="newsletter">
     <div class="close js-close-modal"><img src="./img/close-red.png" alt="" title=""></div>
