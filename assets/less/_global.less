@@ -46,19 +46,64 @@ header {
   padding: 30px 0;
   z-index: 10;
   nav {
-    a {
+    > a, > div {
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      margin-right: 30px;
+    }
+
+    > a {
       font: 24px/1 'SF-UI-Display-Semibold';
       text-transform: uppercase;
       color: #00151f;
-
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
 
       &.active, &:hover {
 
         color: #00f;
 
+      }
+    }
+
+    .lang {
+      display: inline-flex;
+      flex-direction: column;
+      height: 30px;
+      overflow: hidden;
+      top: 5px;
+
+      &.open {
+        overflow: inherit;
+      }
+
+      a {
+        display: block;
+        order: 1;
+        margin-bottom: 5px;
+
+        img {
+          display: block;
+          height: 30px;
+        }
+
+        &.active {
+          order: 0;
+          display: block;
+        }
+
+      }
+    }
+
+    .wp-btn {
+
+      top: 5px;
+      width: 167px;
+      height: 30px;
+      background: url('../img/svg/wp_button.svg') center/cover no-repeat;
+      transition: all .3s;
+
+      &:hover {
+        background: url('../img/svg/wp_button_hover.svg') center/cover no-repeat;
       }
     }
   }
@@ -140,7 +185,6 @@ footer {
     }
   }
 }
-
 .modal-overlay {
   display: none;
   position: fixed;
@@ -150,6 +194,29 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+}
+
+#download {
+  .download-btn {
+    display: block;
+    outline: none;
+    text-align: center;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    padding: 20px 0;
+    border-radius: 100px;
+    margin: 10px 0;
+
+    &.rus {
+      background: #93278f;
+    }
+    &.eng {
+      background: #0000ff;
+    }
+    &.esp {
+      background: #ff0000;
+    }
+  }
 }
 
 .presale {
@@ -165,6 +232,8 @@ footer {
 
   animation: pulsate 2s ease-out;
   animation-iteration-count: infinite;
+
+  transition: background .3s;
 
   &:hover {
     background: url('../img/svg/presale_hover.svg') center/cover no-repeat;

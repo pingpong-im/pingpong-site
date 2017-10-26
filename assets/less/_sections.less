@@ -202,6 +202,11 @@
       padding: 10px 25px;
       font: 300 16px/30px 'Open Sans', sans-serif;
 
+      span {
+        color: #f00;
+        font-weight: 700;
+      }
+
       &--full {
         display: none;
 
@@ -381,10 +386,12 @@
     text-align: center;
     width: 376px;
     margin-bottom: 50px;
+    outline: none;
 
     &__photo {
-      background: url('../img/team-bg.png') center no-repeat;
-      background-size: 376px 215px;
+      img {
+        width: 100%;
+      }
     }
     &__name {
       font: 32px/1 'SHPinscher-Regular';

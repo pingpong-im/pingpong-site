@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    // Slider
     $('.js-partners').slick({
         infinite: true,
         slidesToShow: 5,
@@ -27,49 +29,103 @@ $(document).ready(function () {
             }
         ]
     });
+    $('.js-advisers').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 
+    // News Accordion
     $('.js-accordion').on('click', function () {
         $(this).parent().find('.js-accordion-content').slideToggle();
         $(this).toggleClass('open');
     });
 
+    // Last block buttons
     $('#yes').on('click', function () {
         $('html, body').animate({scrollTop: 0}, "slow");
         return false;
     });
-
     $('#no').on('click', function () {
         $('#newsletter').fadeIn();
         $('.modal-overlay').fadeIn();
         $('html').addClass('modal-open');
     });
 
+    // Modals
+    $('.js-wp-open').on('click', function () {
+        $('#download').fadeIn();
+        $('.modal-overlay').fadeIn();
+        $('html').addClass('modal-open');
+    });
     $('.modal-overlay').on('click', function () {
         $(this).fadeOut();
         $('#newsletter').fadeOut();
+        $('#download').fadeOut();
+        $('html').removeClass('modal-open');
     });
-
     $('.js-close-modal').on('click', function () {
         $(this).parent().fadeOut();
         $('.modal-overlay').fadeOut();
         $('html').removeClass('modal-open');
     });
 
+    // Presale button
     setTimeout(function () {
         $('.presale').fadeIn();
     }, 30000);
 
+    // Converter
     $('.currency').on('click', function () {
         $(this).parent().find('.active').removeClass('active');
         $(this).addClass('active');
 
         checkClass();
     });
-
     $('.converter').find('input').on('focus', function () {
         $('.converter').find('.change').removeClass('change');
         $(this).addClass('change');
         checkClass();
+    });
+
+    // Language dropdown
+    $(document).click(function(){
+        $("#locale").removeClass('open');
+    });
+    $('#locale').on('click', function (e) {
+        e.stopPropagation();
+       $(this).toggleClass('open');
+    });
+    $('#locale').on('click', 'a', function () {
+        $('#locale').find('.active').removeClass('active');
+        $(this).addClass('active');
     })
 
 });

@@ -13,9 +13,18 @@
 <header>
     <div class="container">
         <nav>
+
             <a class="active" href="/">Home</a>
             <a href="./about.html">About Ico</a>
             <a href="./faq.html">FAQ</a>
+
+            <div id="locale" class="lang">
+                <a class="active" href="#"><img src="img/svg/ENG.svg"></a>
+                <a href="#"><img src="img/svg/RUS.svg"></a>
+                <a href="#"><img src="img/svg/ESP.svg"></a>
+            </div>
+
+            <div class="wp-btn js-wp-open"></div>
 
             <div class="bg bg-left">
                 <img src="./img/bg-top-left.png" alt="" title="">
@@ -223,7 +232,7 @@
                 </div>
                 <div class="news__content">
                     <p>
-                        White-paper is being translated into other languages. For now you can enjoy this document in Russian and Spanish.
+                        White-paper is being translated into other languages. For now you can <span class="js-wp-open">enjoy</span> this document in Russian and Spanish.
                     </p>
                     <div class="news__content--full js-accordion-content">
                         <p>
@@ -321,6 +330,44 @@
         </div>
     </div>
 </section>
+
+<section class="section section-7">
+    <div class="container">
+        <h2>Advisers <img src="./img/cups.png" alt="" title=""></h2>
+        <div class="slider js-advisers">
+            <div class="member">
+                <div class="member__photo m-b-20">
+                    <img src="./img/advisers/gary_vinokur.svg" alt="" title="">
+                </div>
+                <p class="member__name m-b-10">Gary <span>Vinokur</span></p>
+                <p class="member__profession">Director, EM Financing at ICBC Standard Bank Plc</p>
+            </div>
+            <div class="member">
+                <div class="member__photo m-b-20">
+                    <img src="./img/advisers/bertnard_gachot.svg" alt="" title="">
+                </div>
+                <p class="member__name m-b-10">Bertrand <span>Gachot</span></p>
+                <p class="member__profession">(CEO) Hype Energy Drinks, Former racing driver
+                </p>
+            </div>
+            <div class="member">
+                <div class="member__photo m-b-20">
+                    <img src="./img/advisers/sven_hurtmann.svg" alt="" title="">
+                </div>
+                <p class="member__name m-b-10">Sven <span>Hartmann</span></p>
+                <p class="member__profession">Troubleshooter at hARTmann Service</p>
+            </div>
+            <div class="member">
+                <div class="member__photo m-b-20">
+                    <img src="./img/advisers/eric_benz.svg" alt="" title="">
+                </div>
+                <p class="member__name m-b-10">Eric <span>Benz</span></p>
+                <p class="member__profession">Managing Director at Cryptopay</p>
+            </div>
+        </div>
+    </div>
+
+</section>
 <section class="section section-7">
     <div class="container">
         <h2>Team <img src="./img/cups.png" alt="" title=""></h2>
@@ -380,6 +427,7 @@
     </div>
 
 </section>
+
 <section class="section section-8">
     <div class="container">
         <div class="row">
@@ -427,6 +475,19 @@
         </form>
     </div>
 </div>
+
+<div class="modal w__400" id="download">
+    <div class="close js-close-modal"><img src="./img/close-red.png" alt="" title=""></div>
+    <div class="modal-content">
+        <img src="img/svg/wp_button_title.svg" alt="" title="">
+
+        <a class="download-btn rus" href="./downloads/wp_rus.txt" download tabindex="0">скачать русский whitepaper</a>
+        <a class="download-btn eng" href="./downloads/wp_eng.txt" download tabindex="0">download english whitepaper</a>
+        <a class="download-btn esp" href="./downloads/wp_esp.txt" download tabindex="0">descargar español whitepaper</a>
+
+    </div>
+</div>
+
 <div class="modal-overlay"></div>
 
 <script src="./js/jquery.min.js"></script>
