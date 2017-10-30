@@ -388,13 +388,7 @@
     margin-bottom: 50px;
     outline: none;
 
-    &__photo {
-      img {
-        width: 100%;
-      }
-    }
     &__name {
-      font: 32px/1 'SHPinscher-Regular';
       color: #00f;
       span {
         background: #00f;
@@ -403,7 +397,51 @@
       }
     }
     &__profession {
-      font: 700 22px/25px 'Open Sans', sans-serif;
+      font: 700 20px/24px 'Open Sans', sans-serif;
+    }
+
+    &.female {
+      .member__name {
+        color: #f0f;
+        span {
+          background: #f0f;
+          color: #fff;
+          padding: 0 2px;
+        }
+      }
+    }
+  }
+
+  .advisers {
+    .member {
+      &__photo {
+        img {
+          width: 223px;
+          margin: 0 auto;
+        }
+      }
+
+      &__name {
+        font: 32px/1 'SHPinscher-Regular';
+      }
+    }
+  }
+
+  .team {
+    .member {
+      &__photo {
+        height: 190px;
+        margin-bottom: 30px;
+
+        img {
+          width: 200px;
+          margin: 0 auto;
+        }
+      }
+
+      &__name {
+        font: 28px/1 'SHPinscher-Regular';
+      }
     }
   }
 }
