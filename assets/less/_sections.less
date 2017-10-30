@@ -488,3 +488,43 @@
     left: 90px;
   }
 }
+
+.section-video {
+  .row {
+    align-items: center;
+  }
+
+  .video {
+    position: relative;
+    background: url('../images/home/video/tv.png') center/cover no-repeat;
+    width: 524px;
+    height: 386px;
+    padding: 20px 32px;
+
+    > img {
+      width: 460px;
+    }
+
+    &__btn {
+      position: absolute;
+      top: 180px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      cursor: pointer;
+
+      img {
+        width: 90px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .video-bg {
+    img {
+      width: 100%;
+    }
+  }
+}
