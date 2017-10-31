@@ -7,6 +7,53 @@
   }
 }
 
+@-webkit-keyframes left-right {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-30px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(30px);}
+}
+@keyframes left-right {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-30px);}
+  20%, 40%, 60%, 80% {transform: translateX(30px);}
+}
+
+@-webkit-keyframes right-left {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(30px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(-30px);}
+}
+@keyframes right-left {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(30px);}
+  20%, 40%, 60%, 80% {transform: translateX(-30px);}
+}
+
+@-webkit-keyframes bottom-top {
+  0%, 100% {-webkit-transform: translateY(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateY(-7px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateY(0);}
+}
+@keyframes bottom-top {
+  0%, 100% {-webkit-transform: translateY(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateY(-7px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateY(0);}
+}
+
+
+.animation(@ms, @count, @anim) {
+  -webkit-animation-duration: @ms;
+  animation-duration: @ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count:@count;
+  -webkit-animation-iteration-count:@count;
+  -webkit-animation-name: @anim;
+  animation-name: @anim;
+}
+
 header {
   nav {
     position: relative;
@@ -21,7 +68,7 @@ header {
 
 .section-1 {
   .bg-1 {
-    bottom: 30px;
+    top: -94px;
     left: 0;
   }
   .bg-2 {
@@ -40,7 +87,7 @@ header {
     width: 400px;
   }
   .bg-5 {
-    bottom: 40px;
+    bottom: 80px;
     right: 400px;
     width: 70px;
   }
@@ -51,16 +98,61 @@ header {
   }
   .bg-7 {
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(~'-50% - 94px'));
     right: 0;
     width: 218px;
+  }
+  .bg-8 {
+    top: 50%;
+    right: 100px;
+  }
+  .bg-9 {
+    top: -94px;
+    right: 150px;
+    width: 100px;
+  }
+
+  .bg-10 {
+    top: -55px;
+    right: 220px;
+    width: 305px;
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      top: 98px;
+      left: 100px;
+
+      .animation(5s, 10s, bottom-top);
+    }
+  }
+
+  .bg-11 {
+    bottom: 350px;
+    left: 170px;
+
+    .animation(10s, infinite, right-left);
+  }
+  .bg-12 {
+    bottom: 30px;
+    left: 435px;
+
+    .animation(10s, infinite, right-left);
+  }
+  .bg-13 {
+    bottom: 120px;
+    left: 140px;
+
+    .animation(10s, infinite, left-right);
   }
 }
 
 .section-2 {
   .bg-left {
-    top: 150px;
-    left: -282px;
+    top: 200px;
+    left: 50px;
+    width: 500px;
   }
 }
 

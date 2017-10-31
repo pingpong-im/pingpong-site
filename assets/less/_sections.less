@@ -24,16 +24,15 @@
 .section-1 {
   padding: 0;
   height: calc(~'100vh - 94px');
-
-  .print {
-    margin-left: -210px;
-    height: 55px;
-  }
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .ping-pong-img {
     width: 100%;
     max-width: 530px;
-    margin-top: 160px;
   }
 
   h1 {
@@ -43,7 +42,8 @@
   }
 
   form {
-    margin-bottom: 240px;
+
+    margin-bottom: 200px;
 
     .form-input {
       font: 16px/56px 'SFUIText-Light';
@@ -77,9 +77,15 @@
 
 .section-2 {
 
+  .row {
+    > div {
+      width: 50%;
+    }
+  }
+
   .notebook {
     margin: 10px 0 0 -60px;
-    max-width: none;
+    width: 650px;
   }
 
   .colorful-list {
@@ -96,7 +102,7 @@
         display: inline-block;
         width: 26px;
         height: 25px;
-        background: url('../img/ul-style-type.png') center/cover;
+        background: url('../images/home/what_ping_pong/arrow_block2.svg') center/cover;
         vertical-align: middle;
         margin-right: 15px;
       }
