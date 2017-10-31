@@ -6,10 +6,12 @@
   .bg-right {
     top: 235px;
     right: 0;
+    width: 320px;
   }
   .bg-left {
-    top: 385px;
+    bottom: 0;
     left: 0;
+    width: 550px;
   }
 
   .col-60 {
@@ -88,9 +90,14 @@
     }
   }
 
+  .anim {
+    .animation(2s, infinite, rotating);
+  }
+
   .bg-right {
     top: -50px;
     right: -120px;
+    width: 800px;
   }
 }
 
@@ -127,6 +134,18 @@
       }
     }
   }
+
+  .bg-1 {
+    top: 50%;
+    transform: translateY(-50%);
+    left: -300px;
+    width: 500px;
+  }
+  .bg-2 {
+    top: 50px;
+    right: -200px;
+    width: 700px;
+  }
 }
 
 .about-4 {
@@ -135,7 +154,8 @@
     position: relative;
     display: flex;
     justify-content: space-around;
-    background: url('../img/road.png') 0 110px no-repeat;
+    background: url('../images/about_ico/road_map/water_roadmap_block4.png') 0 110px no-repeat;
+    background-size: 1200px 81px;
 
     &__step {
 
@@ -143,6 +163,21 @@
       font: 300 14px/20px 'Open-Sans', sans-serif;
       text-align: center;
       z-index: 10;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .anim {
+        .animation(2s, infinite, rotating);
+        margin-bottom: 10px;
+      }
+
+      .line {
+        height: 50px;
+        width: 1px;
+        background: #000;
+        margin-top: 5px;
+      }
 
       &__month {
         font: 16px/20px 'SHPinscher-Regular';
