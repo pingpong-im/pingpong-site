@@ -105,6 +105,14 @@
         background: url('../images/home/what_ping_pong/arrow_block2.svg') center/cover;
         vertical-align: middle;
         margin-right: 15px;
+        opacity: 1;
+        transition: all .5s;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 0;
+        }
       }
 
     }
@@ -144,11 +152,6 @@
   .width-317 {
     flex: 317px 0 0;
     width: 317px;
-  }
-
-  .bg-right {
-    top: 300px;
-    right: 0;
   }
 }
 
@@ -363,7 +366,7 @@
     &:before {
 
       content: '';
-      background: url('../img/arrow-circle-red.png') center;
+      background: url('../images/home/partners/arrowleft_block6.svg') center;
 
     }
 
@@ -376,7 +379,7 @@
     &:before {
 
       content: '';
-      background: url('../img/arrow-circle-dark-blue.png') center;
+      background: url('../images/home/partners/arrowright_block6.svg') center;
 
     }
 
@@ -454,21 +457,40 @@
     justify-content: center;
     position: relative;
 
+    #yes,
+    #no {
+      position: absolute;
+      top: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .hide {
+        display: none;
+      }
+
+      &:hover {
+        .show {
+          display: none;
+        }
+        .hide {
+          display: block;
+        }
+      }
+    }
+
     #yes {
       position: absolute;
       width: 150px;
       height: 50px;
       left: 200px;
-      top: 340px;
       z-index: 15;
     }
 
     #no {
-      position: absolute;
       width: 110px;
       height: 50px;
       left: 405px;
-      top: 340px;
       z-index: 15;
     }
 
@@ -476,18 +498,14 @@
       margin: 0 50px;
 
       &.go {
-        width: 617px;
+        position: relative;
+        top: -30px;
       }
 
       &.slot {
         width: 320px;
       }
     }
-  }
-
-  .bg-left {
-    top: 50%;
-    left: 90px;
   }
 }
 
@@ -525,6 +543,7 @@
   }
 
   .video-bg {
+    padding-left: 50px;
     img {
       width: 100%;
     }
