@@ -99,11 +99,11 @@ header {
       top: 5px;
       width: 167px;
       height: 30px;
-      background: url('../img/svg/wp_button.svg') center/cover no-repeat;
+      background: url('../images/home/svg/wp_button.svg') center/cover no-repeat;
       transition: all .3s;
 
       &:hover {
-        background: url('../img/svg/wp_button_hover.svg') center/cover no-repeat;
+        background: url('../images/home/svg/wp_button_hover.svg') center/cover no-repeat;
       }
     }
   }
@@ -206,24 +206,40 @@ footer {
 }
 
 #download {
-  .download-btn {
-    display: block;
+  text-align: center;
+
+  .download-link {
+    display: inline-block;
     outline: none;
     text-align: center;
-    color: #fff;
     font-family: "Open Sans", sans-serif;
-    padding: 20px 0;
-    border-radius: 100px;
+    font-size: 18px;
     margin: 10px 0;
+    text-decoration: underline;
 
     &.rus {
-      background: #93278f;
+      color: #93278f;
     }
     &.eng {
-      background: #0000ff;
+      color: #0000ff;
     }
     &.esp {
-      background: #ff0000;
+      color: #ff0000;
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url('../images/home/svg/wp_arrow.svg') center/cover no-repeat;
+        margin-right: 10px;
+        vertical-align: middle;
+        position: absolute;
+        margin-top: 3px;
+        left: 40px;
+      }
     }
   }
 }
