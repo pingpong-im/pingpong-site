@@ -50,13 +50,15 @@ $(document).ready(function () {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 2,
+          autoplay: false
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 1,
+          autoplay: false
         }
       }
     ]
@@ -82,16 +84,51 @@ $(document).ready(function () {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 2,
+          autoplay: false
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1
+          slidesToShow: 1,
+          autoplay: false
         }
       }
     ]
+  });
+
+  $('.js-features').slick({
+    responsive: [
+      {
+        breakpoint: 9999,
+        settings: "unslick"
+      },
+      {
+        breakpoint: 1180,
+        settings: {
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+          adaptiveHeight: true
+        }
+      }
+    ]
+  });
+  $(window).on('resize orientationchange', function() {
+    $('.js-features').slick('resize');
   });
 
   // News Accordion
