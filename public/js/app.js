@@ -154,6 +154,12 @@ $(document).ready(function () {
     $('.modal-overlay').fadeIn();
     $('html').addClass('modal-open');
   });
+  $('.js-buy-modal').on('click', function () {
+    $('#buy-tokens').fadeIn();
+    $('.modal-overlay').fadeIn();
+    $('html').addClass('modal-open');
+  });
+
   $('.modal-overlay').on('click', function () {
     $(this).fadeOut();
     $('#newsletter').fadeOut();
@@ -220,6 +226,11 @@ $(document).ready(function () {
   $('#locale').on('click', 'a', function () {
     $('#locale').find('.active').removeClass('active');
     $(this).addClass('active');
+  })
+
+  $('.js-hamb').on('click', function () {
+    $(this).toggleClass('open');
+    $('.js-menu').slideToggle();
   })
 
 });

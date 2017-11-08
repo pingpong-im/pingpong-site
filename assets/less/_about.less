@@ -82,6 +82,12 @@
     }
   }
 
+  .btn-buy {
+    width: 290px;
+    height: 49px;
+    margin-top: 50px;
+  }
+
   .container {
     position: relative;
     h2, p, ul {
@@ -186,5 +192,34 @@
 
     }
 
+  }
+}
+
+#buy-tokens {
+  .man__form {
+    display: block;
+    position: static;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  #buy-tokens {
+    width: 100%;
+    .man__form {
+      width: 100%;
+
+      .row {
+        &.colorful-text {
+          flex-wrap: wrap;
+          margin: 10px 0;
+        }
+
+        .col-2 {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 }
