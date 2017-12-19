@@ -149,6 +149,11 @@ $(document).ready(function () {
   });
 
   // Modals
+  $('.video__btn').on('click', function () {
+    $('.video-placeholder').hide();
+    $('.video__btn').fadeOut();
+    $('#player').fadeIn();
+  });
   $('.js-wp-open').on('click', function () {
     $('#download').fadeIn();
     $('.modal-overlay').fadeIn();
@@ -175,6 +180,7 @@ $(document).ready(function () {
     $(this).parent().fadeOut();
     $('.modal-overlay').fadeOut();
     $('html').removeClass('modal-open');
+    $('#player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
   });
 
   // Man button
@@ -191,7 +197,7 @@ $(document).ready(function () {
   }, 5000);
 
   $('.js-click').on('click', function () {
-    $(this).fadeOut().parent().addClass('next-step');
+    $('.man__click').fadeOut().parent().addClass('next-step');
     $('.modal-overlay').fadeIn();
     $('.js-phrases').fadeIn();
     $('html').addClass('modal-open');
