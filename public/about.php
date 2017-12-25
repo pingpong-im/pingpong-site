@@ -1,3 +1,27 @@
+<?php  
+    if(isset($_GET['lang'])) {
+        if($_GET['lang'] == "eng") {
+            include('languages/english.php'); 
+            $active_btn_en = 'class="active"';
+            $active_btn_ru = '';
+            $active_btn_esp = '';
+        } else if($_GET['lang'] == "esp") {
+            include('languages/spanish.php'); 
+            $active_btn_esp = 'class="active"';
+            $active_btn_en = '';
+            $active_btn_ru = '';
+        } else if($_GET['lang'] == "ru") {
+            include('languages/russian.php'); 
+            $active_btn_ru = 'class="active"';
+            $active_btn_en = '';
+            $active_btn_esp = '';
+        }
+    } else {
+        $_GET['lang'] = "eng";
+        include('languages/english.php'); 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +53,14 @@
     <header class="desktop-header">
         <div class="container">
             <nav>
-                <a href="/">Home</a>
-                <a class="active" href="./about.html">About Ico</a>
-                <a href="./faq.html">FAQ</a>
+                <a href="/?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['home'] ?></a>
+                <a class="active" href="./about.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['about_ico'] ?></a>
+                <a href="./faq.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['faq'] ?></a>
 
                 <div id="locale" class="lang">
-                    <a class="active" href="#"><img src="images/home/svg/ENG.svg"></a>
-                    <a href="#"><img src="images/home/svg/RUS.svg"></a>
-                    <a href="#"><img src="images/home/svg/ESP.svg"></a>
+                    <a <?php echo $active_btn_en; ?> href="<?php if($_GET['lang'] != 'eng') { ?>./about.php?lang=eng<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ENG.svg"></a>
+                    <a <?php echo $active_btn_ru; ?> href="<?php if($_GET['lang'] != 'ru') { ?>./about.php?lang=ru<?php } else { ?>#<?php } ?>"><img src="images/home/svg/RUS.svg"></a>
+                    <a <?php echo $active_btn_esp; ?> href="<?php if($_GET['lang'] != 'esp') { ?>./about.php?lang=esp<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ESP.svg"></a>
                 </div>
 
                 <div class="wp-btn js-wp-open"></div>
@@ -47,13 +71,13 @@
     <header class="mobile-header">
         <div class="row">
             <img src="./images/home/1_screen/logo_block1_animation.svg" width="215" alt="" title="">
-            <div class="hamb js-hamb">Menu</div>
+            <div class="hamb js-hamb"><?php echo $lang['menu'] ?></div>
         </div>
         <div class="menu js-menu">
-            <a href="/">Home</a>
-            <a class="active" href="./about.html">About Ico</a>
-            <a href="./news-and-partners.html">News & Partners</a>
-            <a href="./faq.html">FAQ</a>
+            <a href="/"><?php echo $lang['home'] ?></a>
+            <a class="active" href="./about.html"><?php echo $lang['about_ico'] ?></a>
+            <a href="./news-and-partners.html"><?php echo $lang['news_partners'] ?></a>
+            <a href="./faq.html"><?php echo $lang['faq'] ?></a>
         </div>
     </header>
 
@@ -69,56 +93,50 @@
             <div class="table">
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold blue">What is a PingPong Token?</span>
+                        <span class="extrabold blue"><?php echo $lang['what_is_pingpong_token'] ?></span>
                     </div>
                     <div class="td">
-                        PingPong Token represents a right to <span class="bold red">receive a part of PingPong balls</span>,
-                        which could be <mark class="bg-black white">easily exchanged for BTC.</mark> Moreover, PingPongers community is engaged in voting over following matters: the
-                        product development, the company’s marketing strategy, the product design. In addition, the token
-                        purchase amount will be in direct ratio with paid features.
+                        <?php echo $lang['what_is_pingpong_token_description'] ?>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold">Payout Structure:</span>
+                        <span class="extrabold"><?php $lang['payout_structure'] ?></span>
                     </div>
                     <div class="td">
-                        By the end of each month , the company exchanges <span class="bold italic red">100 percent of its sales revenue</span> for BTC which are
-                        used to purchase PingPong balls (P-balls).Those P-balls are distributed <span class="bold italic">proportionally among
-                        PingPongers</span>, depending on token quantity. PingPongers are able to exchange their P-balls for BTC as
-                        well.
+                        <?php echo $lang['payout_structure_description'] ?>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold blue">Symbol:</span>
+                        <span class="extrabold blue"><?php echo $lang['symbol'] ?></span>
                     </div>
                     <div class="td">
-                        PPRT
+                        <?php echo $lang['symbol_description'] ?>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold">Total Supply:</span>
+                        <span class="extrabold"><?php echo $lang['total_supply'] ?></span>
                     </div>
                     <div class="td">
-                        1 035 000 (one million thirty-five thousand) tokens
+                        <?php echo $lang['total_supply_description'] ?>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold blue">Adjustable:</span>
+                        <span class="extrabold blue"><?php echo $lang['adjustable'] ?></span>
                     </div>
                     <div class="td">
-                        All unsold tokens will be burned
+                        <?php echo $lang['adjustable_description'] ?>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="td title">
-                        <span class="extrabold">Rate:</span>
+                        <span class="extrabold"><?php echo $lang['rate'] ?></span>
                     </div>
                     <div class="td">
-                        Price per token, locked. <span class="bold italic pink">1 token = 0,0028 BTC/ 0,036 ETH</span>
+                        <?php echo $lang['rate_description'] ?>
                     </div>
                 </div>
             </div>
@@ -134,32 +152,29 @@
 
     <div id="presale" class="section about-2">
         <div class="container colorful-text">
-            <h2>PROS OF PRESALE <img src="./images/about_ico/pros_of_pres/presale_1.svg" alt="" title=""></h2>
-            <p class="f-s-22 m-b-25">Presale tokens will have <span class="blue">the same bounties</span> as the regular ones:</p>
+            <h2><?php echo $lang['pros_of_presale'] ?> <img src="./images/about_ico/pros_of_pres/presale_1.svg" alt="" title=""></h2>
+            <p class="f-s-22 m-b-25"><?php echo $lang['pros_of_presale_header'] ?></p>
             <ul class="pros-list">
                 <li>
-                    a part of PingPong balls <img src="./images/about_ico/pros_of_pres/balls_block2.svg" alt="" title="">
-                    which could be easily <mark class="bg-red white">exchanged for</mark> <img src="./images/about_ico/pros_of_pres/exchange_arrow_block2.svg" alt="" title="">
-                    <mark class="bg-red white">BTC</mark> <img class="anim" src="./images/about_ico/pros_of_pres/btc_block2.svg" alt="" title="">
-                    and engagement in the <span class="bold">product development</span>
+                    <?php echo $lang['pros_of_presale_description_1'] ?>
                 </li>
                 <li>
-                    moreover, token purchase amount will be in direct ratio with paid features
+                     <?php echo $lang['pros_of_presale_description_2'] ?>
                     <img src="./images/about_ico/pros_of_pres/feauteres_block2.svg" alt="" title="">
                 </li>
                 <li>
-                    the number of tokens for the presale equal <span class="bold">84 BTC</span>
+                    <?php echo $lang['pros_of_presale_description_3'] ?> <span class="bold">84 BTC</span>
                     <img src="./images/about_ico/pros_of_pres/punkt4_arrow_block2.svg" alt="" title="">
                     <span class="bold">1 080 ETH (60 000 PPRT)</span>
                 </li>
                 <li>
-                    PP token presale price is twice cheaper <span class="bold">(50% less)</span> than a regular one, with a subsequent buy-out at
+                    <?php echo $lang['pros_of_presale_description_4'] ?>
                     <br>
                     <span class="bold">0,0028 BTC</span>
                     <img src="./images/about_ico/pros_of_pres/punkt4_arrow_block2.svg" alt="" title="">
                     <span class="bold">0,036 ETH (ordinary price)</span>
                     <img src="./images/about_ico/pros_of_pres/money_block2.svg" alt="" title="">
-                    after the successful ICO
+                    <?php echo $lang['pros_of_presale_description_5_end'] ?>
                 </li>
             </ul>
 

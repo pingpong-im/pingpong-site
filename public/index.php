@@ -1,3 +1,27 @@
+<?php  
+    if(isset($_GET['lang'])) {
+        if($_GET['lang'] == "eng") {
+            include('languages/english.php'); 
+            $active_btn_en = 'class="active"';
+            $active_btn_ru = '';
+            $active_btn_esp = '';
+        } else if($_GET['lang'] == "esp") {
+            include('languages/spanish.php'); 
+            $active_btn_esp = 'class="active"';
+            $active_btn_en = '';
+            $active_btn_ru = '';
+        } else if($_GET['lang'] == "ru") {
+            include('languages/russian.php'); 
+            $active_btn_ru = 'class="active"';
+            $active_btn_en = '';
+            $active_btn_esp = '';
+        }
+    } else {
+        $_GET['lang'] = "eng";
+        include('languages/english.php'); 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +54,14 @@
         <div class="container">
             <nav>
 
-                <a class="active" href="/">Home</a>
-                <a href="./about.html">About Ico</a>
-                <a href="./faq.html">FAQ</a>
+                <a class="active" href="/?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['home'] ?></a>
+                <a href="./about.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['about_ico'] ?></a>
+                <a href="./faq.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['faq'] ?></a>
 
                 <div id="locale" class="lang">
-                    <a class="active" href="#"><img src="images/home/svg/ENG.svg"></a>
-                    <a href="#"><img src="images/home/svg/RUS.svg"></a>
-                    <a href="#"><img src="images/home/svg/ESP.svg"></a>
+                    <a <?php echo $active_btn_en; ?> href="<?php if($_GET['lang'] != 'eng') { ?>/?lang=eng<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ENG.svg"></a>
+                    <a <?php echo $active_btn_ru; ?> href="<?php if($_GET['lang'] != 'ru') { ?>/?lang=ru<?php } else { ?>#<?php } ?>"><img src="images/home/svg/RUS.svg"></a>
+                    <a <?php echo $active_btn_esp; ?> href="<?php if($_GET['lang'] != 'esp') { ?>/?lang=esp<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ESP.svg"></a>
                 </div>
 
                 <div class="wp-btn js-wp-open"></div>
@@ -50,13 +74,13 @@
     <header class="mobile-header">
         <div class="row">
             <span></span>
-            <div class="hamb js-hamb">Menu</div>
+            <div class="hamb js-hamb"><?php echo $lang['menu'] ?></div>
         </div>
         <div class="menu js-menu">
-            <a class="active" href="/">Home</a>
-            <a href="./about.html">About Ico</a>
-            <a href="./news-and-partners.html">News & Partners</a>
-            <a href="./faq.html">FAQ</a>
+            <a class="active" href="/"><?php echo $lang['home'] ?></a>
+            <a href="./about.html"><?php echo $lang['about_ico'] ?></a>
+            <a href="./news-and-partners.html"><?php echo $lang['news_partners'] ?></a>
+            <a href="./faq.html"><?php echo $lang['faq'] ?></a>
         </div>
     </header>
 
@@ -65,10 +89,10 @@
             <div class=" m-b-40">
                 <img class="ping-pong-img" src="./images/home/1_screen/logo_block1_animation.svg" alt="Ping Pong" title="Ping Pong">
             </div>
-            <h1>PLATFORM FOR START-UP'S OF TOKENOMICA AGE</h1>
+            <h1><?php echo $lang['platform_header'] ?></h1>
             <form>
                 <input type="email" class="form-input" placeholder="email">
-                <button class="submit">Stay with me</button>
+                <button class="submit"><?php echo $lang['s1_submit_btn'] ?></button>
             </form>
             <div>
                 <img src="./images/home/1_screen/4_block1.svg" alt="Ping Pong" title="Ping Pong" height="60">
@@ -93,38 +117,23 @@
     </section>
     <section class="section section-2">
         <div class="container">
-            <h2>WHAT IS PINGPONG? <img src="./images/home/what_ping_pong/smile_block2.svg" alt="" title=""></h2>
+            <h2><?php echo $lang['what_is'] ?> <img src="./images/home/what_ping_pong/smile_block2.svg" alt="" title=""></h2>
             <div class="row">
                 <div class="m-r-30">
                     <img class="notebook" src="./images/home/what_ping_pong/computer1.svg" alt="What is PingPong?" title="What is PingPong?">
                 </div>
                 <div>
                     <p class="colorful-text">
-                        PingPong is a platform, which allows new way of <span
-                        class="italic pink ">initiating and managing</span> the growth of any
-                        <mark class="bg-black white">start-up or a team</mark>.
-                        It allows <span class="extrabold blue">to communicate, collaborate and develop</span> every aspect
-                        of your start-up and
-                        <mark class="bg-red bold">pay</mark>
-                        for completed work
-                        <mark class="bg-green blue">with crypto-currency.</mark>
+                        <?php echo $lang['pingpong_platform_description_1'] ?>
                     </p>
                     <p class="colorful-text">
-                        The base functionality to <span class="italic pink ">issue your own token</span> gives startupers an
-                        ability to involve
-                        people into their start-up by
-                        either <span class="cond red">selling tokens or award tokens</span> to freelancers or think-alikes
-                        for
-                        completing tasks.
+                       <?php echo $lang['pingpong_platform_description_2'] ?>
                     </p>
                     <ul class="colorful-list m-t-15">
-                        <li>a user-friendly and secure <span class="bold normal">interaction platform</span></li>
-                        <li>a <span class="italic blue">project-management</span> and task tracking <span
-                            class="italic blue">platform</span></li>
-                            <li><span class="pink extrabold normal">payments</span> and invoicing</li>
-                            <li>
-                                <mark>token issuing</mark>
-                            </li>
+                        <li><?php echo $lang['pingpong_platform_advantage_1'] ?></li>
+                        <li><?php echo $lang['pingpong_platform_advantage_2'] ?></li>
+                        <li><?php echo $lang['pingpong_platform_advantage_3'] ?></li>
+                        <li><?php echo $lang['pingpong_platform_advantage_4'] ?></li>
                         </ul>
 
                     </div>
@@ -140,26 +149,17 @@
         </section>
         <section class="section section-3">
             <div class="container">
-                <h2>Features <img src="./images/home/features/battary_block3.png" width="50" alt="" title=""></h2>
+                <h2><?php echo $lang['features_header'] ?> <img src="./images/home/features/battary_block3.png" width="50" alt="" title=""></h2>
                 <div class="row colorful-text js-features">
                     <div class="width-360">
                         <div class="height-150">
                             <img class="qr-code" src="./images/home/features/img1_block3.png" width="165">
                         </div>
                         <h3>
-                            <mark class="bg-black white">Token creation platform</mark>
+                            <mark class="bg-black white"><?php echo $lang['token_creation_platform_header'] ?></mark>
                         </h3>
                         <p>
-                            <mark class="bg-black green bold">Blockchain</mark>
-                            platform allows the customer to <span class="italic blue">create tokens</span>, which can be used as
-                            a payment tool in
-                            group chats and as an investment tool for anyone, not only to financially support start-ups, but
-                            also to increase assets. <span class="bold blue">The process</span> of creating a token using
-                            PingPong <span class="italic pink">is</span> both <span
-                            class="italic pink">simple and elegant</span>.
-                            Users <span class="red">don’t need</span> to have <span class="red">coding skills</span>. They can
-                            list created tokens on an exchange, trade them
-                            within their circles or simply keep it for private use.
+                            <?php echo $lang['token_creation_platform_description'] ?>
                         </p>
                     </div>
                     <div class="width-380 white-bg-text">
@@ -167,15 +167,10 @@
                             <img src="./images/home/features/766.svg" width="360">
                         </div>
                         <h3>
-                            <mark class="bg-blue white">Group conversations</mark>
+                            <mark class="bg-blue white"><?php echo $lang['group_conversation_header'] ?></mark>
                         </h3>
                         <p>
-                            Group chat is a great way of
-                            <ins class="bold">collaboration</ins>
-                            on any topic or project.
-                            PingPong has everything you need to stay focused: <span class="italic pink">share media</span>,
-                            use mentions and flexible notifications, <span class="blue">create</span> different-topic <span
-                            class="blue">threads</span>.
+                            <?php echo $lang['group_conversation_description'] ?>
                         </p>
                     </div>
                     <div class="width-300">
@@ -183,14 +178,10 @@
                             <img src="./images/home/features/img3_block3.png" width="300">
                         </div>
                         <h3 class="m-t-25">
-                            <mark class="bg-black yellow">Card</mark>
+                            <mark class="bg-black yellow"><?php echo $lang['card_header'] ?></mark>
                         </h3>
                         <p>
-                            Card is a place to
-                            <mark class="bg-black yellow bold">add comments</mark>
-                            , checklists, upload file attachments and <span class="red bold">due dates</span>.
-                            You can share PingPong cards with many people you need and <span class="bold">divvy up</span> their
-                            <span class="bold">tasks</span> to keep any project on track.
+                            <?php echo $lang['card_description'] ?>
                         </p>
                     </div>
                     <div class="white-bg-text width-300">
@@ -198,16 +189,10 @@
                             <img src="./images/home/features/img4_block3.png" width="290">
                         </div>
                         <h3>
-                            <mark class="bg-red green">Library</mark>
+                            <mark class="bg-red green"><?php echo $lang['library_header'] ?></mark>
                         </h3>
                         <p>
-                            A library is an organised <span class="blue bold">storage box</span>, for all content that has ever
-                            been sent in chat.
-                            Moreover, you can download to PingPong library <span class="italic red">any files</span> you want to
-                            store.
-                            Filter by date, sender, text inside documents.
-                            Along with the state-of-art search technology, PingPong has deep search functionality,
-                            returning results in case the keyword appears in the document or in the context.
+                            <?php echo $lang['library_description'] ?>
                         </p>
                     </div>
                     <div class="width-250">
@@ -215,14 +200,10 @@
                             <img class="anim" src="./images/home/features/img5_block3.svg">
                         </div>
                         <h3>
-                            <mark>Payment</mark>
+                            <mark><?php echo $lang['payment_header'] ?></mark>
                         </h3>
                         <p>
-                            PingPong gives startupers freedom to choose the way of
-                            <mark class="bg-red white">payment</mark>
-                            : with <span class="italic bold pink">crypto-currency</span> or with creation of tokens.
-                            Moreover, card tasks in PingPong can be connected with automatic transactions, making payment of
-                            services simple and convenient.
+                            <?php echo $lang['payment_description'] ?>
                         </p>
                     </div>
                     <div class="width-250">
@@ -230,11 +211,10 @@
                             <img src="./images/home/features/img6_block3.png" width="190">
                         </div>
                         <h3>
-                            <mark class="bg-red yellow">Security</mark>
+                            <mark class="bg-red yellow"><?php echo $lang['security_header'] ?></mark>
                         </h3>
                         <p>
-                            <span class="bold">PingPong</span> uses end-to-end encryption to secure your personal and business
-                            information.
+                            <?php echo $lang['security_description'] ?>
                         </p>
                     </div>
                     <div class="width-300">
@@ -242,13 +222,10 @@
                             <img src="./images/home/features/img7_block3.png" width="90">
                         </div>
                         <h3>
-                            <mark class="bg-red light-blue">Open Api</mark>
+                            <mark class="bg-red light-blue"><?php echo $lang['openapi_header'] ?></mark>
                         </h3>
                         <p>
-                            PingPong is meant to <span class="bold">simplify work</span> with different Apps. Open API allows
-                            future <span class="italic red">integration</span>
-                            with Dropbox, Google Docs, GitHub, which also helps users to track the project process
-                            and decrease overwork with information from <span class="extrabold italic blue">different IMs, mails and project tools.</span>
+                            <?php echo $lang['openapi_description'] ?>
                         </p>
                     </div>
                 </div>
@@ -260,7 +237,7 @@
         </section>
         <section class="section section-6">
             <div class="container">
-                <h2>Partners <img src="./images/home/partners/skull_block6.svg" alt="" title=""></h2>
+                <h2><?php echo $lang['partners_header'] ?> <img src="./images/home/partners/skull_block6.svg" alt="" title=""></h2>
                 <div class="slider js-partners">
                     <a href="https://hypethon.cryptofriends.io/" target="_blank"><img src="images/home/logo_1.png" alt="" title=""></a>
                     <a href="https://bntouch.com/" target="_blank"><img src="images/home/logo_2.png" alt="" title=""></a>
@@ -285,7 +262,7 @@
         </section>
         <section class="section section-video">
             <div class="container">
-                <h2>PINGPONG in 1 minute <img src="./images/home/video/photo_block5.svg" alt="" title=""></h2>
+                <h2><?php echo $lang['pingpong_video_header'] ?> <img src="./images/home/video/photo_block5.svg" alt="" title=""></h2>
                 <div class="row display-block">
                     <div class="video">
                         <iframe id="player" width="624px" height="394px" src="https://www.youtube.com/embed/6ta6b5oGhZA?rel=0&wmode=Opaque&enablejsapi=1" frameborder="0"></iframe>
@@ -302,7 +279,7 @@
         </section>
         <section class="section section-7">
             <div class="container">
-                <h2>Team <img src="./images/home/team/team_1_block7.svg" alt="" title=""></h2>
+                <h2><?php echo $lang['team_header'] ?> <img src="./images/home/team/team_1_block7.svg" alt="" title=""></h2>
                 <div class="slider team js-team">
                     <div class="member">
                         <div class="member__photo m-b-20">
