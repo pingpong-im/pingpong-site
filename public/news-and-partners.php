@@ -1,3 +1,30 @@
+<?php  
+if(isset($_GET['lang'])) {
+    if($_GET['lang'] == "eng") {
+        include('languages/english.php'); 
+        $active_btn_en = 'class="active"';
+        $active_btn_ru = '';
+        $active_btn_esp = '';
+    } else if($_GET['lang'] == "esp") {
+        include('languages/spanish.php'); 
+        $active_btn_esp = 'class="active"';
+        $active_btn_en = '';
+        $active_btn_ru = '';
+    } else if($_GET['lang'] == "ru") {
+        include('languages/russian.php'); 
+        $active_btn_ru = 'class="active"';
+        $active_btn_en = '';
+        $active_btn_esp = '';
+    }
+} else {
+    $_GET['lang'] = "eng";
+    include('languages/english.php'); 
+    $active_btn_en = 'class="active"';
+    $active_btn_ru = '';
+    $active_btn_esp = '';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,13 +56,13 @@
 <header class="mobile-header">
     <div class="row">
         <img src="./images/home/1_screen/logo_block1_animation.svg" width="215" alt="" title="">
-        <div class="hamb js-hamb">Menu</div>
+        <div class="hamb js-hamb"><?php echo $lang['menu'] ?></div>
     </div>
     <div class="menu js-menu">
-        <a href="/">Home</a>
-        <a href="./about.html">About Ico</a>
-        <a class="active" href="./news-and-partners.html">News & Partners</a>
-        <a href="./faq.html">FAQ</a>
+        <a href="/?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['home'] ?></a>
+        <a href="./about.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['about_ico'] ?></a>
+        <a class="active" href="./news-and-partners.html?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['news_partners'] ?></a>
+        <a href="./faq.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['faq'] ?></a>
     </div>
 </header>
 

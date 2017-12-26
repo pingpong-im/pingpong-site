@@ -223,14 +223,14 @@ $(document).ready(function () {
 
   // Language dropdown
   $(document).click(function () {
-    $("#locale").removeClass('open');
+    $(".lang").removeClass('open');
   });
-  $('#locale').on('click', function (e) {
+  $('.lang').on('click', function (e) {
     e.stopPropagation();
     $(this).toggleClass('open');
   });
-  $('#locale').on('click', 'a', function () {
-    $('#locale').find('.active').removeClass('active');
+  $('.lang').on('click', 'a', function () {
+    $('.lang').find('.active').removeClass('active');
     $(this).addClass('active');
   })
 

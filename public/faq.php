@@ -1,25 +1,28 @@
 <?php  
-    if(isset($_GET['lang'])) {
-        if($_GET['lang'] == "eng") {
-            include('languages/english.php'); 
-            $active_btn_en = 'class="active"';
-            $active_btn_ru = '';
-            $active_btn_esp = '';
-        } else if($_GET['lang'] == "esp") {
-            include('languages/spanish.php'); 
-            $active_btn_esp = 'class="active"';
-            $active_btn_en = '';
-            $active_btn_ru = '';
-        } else if($_GET['lang'] == "ru") {
-            include('languages/russian.php'); 
-            $active_btn_ru = 'class="active"';
-            $active_btn_en = '';
-            $active_btn_esp = '';
-        }
-    } else {
-        $_GET['lang'] = "eng";
+if(isset($_GET['lang'])) {
+    if($_GET['lang'] == "eng") {
         include('languages/english.php'); 
+        $active_btn_en = 'class="active"';
+        $active_btn_ru = '';
+        $active_btn_esp = '';
+    } else if($_GET['lang'] == "esp") {
+        include('languages/spanish.php'); 
+        $active_btn_esp = 'class="active"';
+        $active_btn_en = '';
+        $active_btn_ru = '';
+    } else if($_GET['lang'] == "ru") {
+        include('languages/russian.php'); 
+        $active_btn_ru = 'class="active"';
+        $active_btn_en = '';
+        $active_btn_esp = '';
     }
+} else {
+    $_GET['lang'] = "eng";
+    include('languages/english.php'); 
+    $active_btn_en = 'class="active"';
+    $active_btn_ru = '';
+    $active_btn_esp = '';
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,15 +72,21 @@
     </header>
 
     <header class="mobile-header">
+        <div id="locale" class="lang">
+            <a <?php echo $active_btn_en; ?> href="<?php if($_GET['lang'] != 'eng') { ?>./faq.php?lang=eng<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ENG.svg"></a>
+            <a <?php echo $active_btn_ru; ?> href="<?php if($_GET['lang'] != 'ru') { ?>./faq.php?lang=ru<?php } else { ?>#<?php } ?>"><img src="images/home/svg/RUS.svg"></a>
+            <a <?php echo $active_btn_esp; ?> href="<?php if($_GET['lang'] != 'esp') { ?>./faq.php?lang=esp<?php } else { ?>#<?php } ?>"><img src="images/home/svg/ESP.svg"></a>
+        </div>
+
         <div class="row">
             <img src="./images/home/1_screen/logo_block1_animation.svg" width="215" alt="" title="">
-            <div class="hamb js-hamb">Menu</div>
+            <div class="hamb js-hamb"><?php echo $lang['menu'] ?></div>
         </div>
         <div class="menu js-menu">
-            <a href="/">Home</a>
-            <a href="./about.html">About Ico</a>
-            <a href="./news-and-partners.html">News & Partners</a>
-            <a class="active" href="./faq.html">FAQ</a>
+            <a href="/?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['home'] ?></a>
+            <a href="./about.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['about_ico'] ?></a>
+            <a href="./news-and-partners.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['news_partners'] ?></a>
+            <a class="active" href="./faq.php?lang=<?php echo $_GET['lang'] ?>"><?php echo $lang['faq'] ?></a>
         </div>
     </header>
 
@@ -113,75 +122,75 @@
             <h3 class="blue"><?php echo $lang['faq6_header'] ?></h3>
             <p>
                <?php echo $lang['faq6_description'] ?>
-            </p>
+           </p>
 
-            <h3><?php echo $lang['faq7_header'] ?></h3>
-            <p>
-                <?php echo $lang['faq7_description'] ?>
-            </p>
+           <h3><?php echo $lang['faq7_header'] ?></h3>
+           <p>
+            <?php echo $lang['faq7_description'] ?>
+        </p>
 
-            <h3 class="red"><?php echo $lang['faq8_header'] ?></h3>
-            <p>
-                <?php echo $lang['faq8_description'] ?>
-            </p>
+        <h3 class="red"><?php echo $lang['faq8_header'] ?></h3>
+        <p>
+            <?php echo $lang['faq8_description'] ?>
+        </p>
 
-            <h3 class="pink"><?php echo $lang['faq9_header'] ?></h3>
-            <p>
-                <?php echo $lang['faq9_description'] ?>
-            </p>
+        <h3 class="pink"><?php echo $lang['faq9_header'] ?></h3>
+        <p>
+            <?php echo $lang['faq9_description'] ?>
+        </p>
 
-            <h3><?php echo $lang['faq10_header'] ?></h3>
-            <p>
-                <?php echo $lang['faq10_description'] ?>
-            </p>
+        <h3><?php echo $lang['faq10_header'] ?></h3>
+        <p>
+            <?php echo $lang['faq10_description'] ?>
+        </p>
 
-            <h3 class="light-blue"><?php echo $lang['faq11_header'] ?></h3>
-            <p>
-                <?php echo $lang['faq11_description'] ?>
-            </p>
+        <h3 class="light-blue"><?php echo $lang['faq11_header'] ?></h3>
+        <p>
+            <?php echo $lang['faq11_description'] ?>
+        </p>
 
-        </div>
-
-        <div class="bg bg-left">
-            <img src="./images/faq/bg_3.svg" alt="" title="">
-        </div>
-
-        <div class="bg bg-right">
-            <img src="./images/faq/bg_2.svg" alt="" title="">
-        </div>
-
-
-        <div class="bg bg-1">
-            <img src="./images/faq/bg_4.svg" alt="" title="">
-        </div>
-        <div class="bg bg-2">
-            <img src="./images/faq/finger_bg.svg" alt="" title="">
-        </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="text-center">
-                <div class="m-b-25">
-                    <a class="m-r-25" href="https://www.facebook.com/PingPong-1726369140769468/?ref=bookmarks" target="_blank">
-                        <img src="./images/home/footer/fb_footer.svg" alt="Facebook" title="">
-                    </a>
-                    <a class="m-r-25" href="https://medium.com/@pingpong.rocks" target="_blank">
-                        <img src="./images/home/footer/m_green_footer.svg" alt="Medium" title="">
-                    </a>
-                    <a href="https://twitter.com/pingpongtwitt" target="_blank">
-                        <img src="./images/home/footer/tw.svg" alt="Twitter" title="">
-                    </a>
-                </div>
-                <p class="p-b-10">Hi@pingpong.rocks</p>
-                <p class="p-b-30">Copyright © 2017 PINGPONG SOFTWARE INC</p>
+    <div class="bg bg-left">
+        <img src="./images/faq/bg_3.svg" alt="" title="">
+    </div>
+
+    <div class="bg bg-right">
+        <img src="./images/faq/bg_2.svg" alt="" title="">
+    </div>
+
+
+    <div class="bg bg-1">
+        <img src="./images/faq/bg_4.svg" alt="" title="">
+    </div>
+    <div class="bg bg-2">
+        <img src="./images/faq/finger_bg.svg" alt="" title="">
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="text-center">
+            <div class="m-b-25">
+                <a class="m-r-25" href="https://www.facebook.com/PingPong-1726369140769468/?ref=bookmarks" target="_blank">
+                    <img src="./images/home/footer/fb_footer.svg" alt="Facebook" title="">
+                </a>
+                <a class="m-r-25" href="https://medium.com/@pingpong.rocks" target="_blank">
+                    <img src="./images/home/footer/m_green_footer.svg" alt="Medium" title="">
+                </a>
+                <a href="https://twitter.com/pingpongtwitt" target="_blank">
+                    <img src="./images/home/footer/tw.svg" alt="Twitter" title="">
+                </a>
             </div>
+            <p class="p-b-10">Hi@pingpong.rocks</p>
+            <p class="p-b-30">Copyright © 2017 PINGPONG SOFTWARE INC</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/slick/slick.min.js"></script>
-    <script src="./js/app.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/slick/slick.min.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>
