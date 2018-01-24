@@ -509,11 +509,11 @@ if(isset($_GET['lang'])) {
 		<div class="modal-content">
 			<img src="images/home/svg/wp_download_1.svg" class="m-b-30" alt="" title="">
 
-			<a class="download-link rus" href="./downloads/wp_rus.txt" download tabindex="0">скачать русский whitepaper</a>
+			<a class="download-link rus" href="./downloads/Whitepaper_PP_rus.pdf" download tabindex="0">скачать русский whitepaper</a>
 			<br>
-			<a class="download-link eng" href="./downloads/wp_eng.txt" download tabindex="0">download english whitepaper</a>
+			<a class="download-link eng" href="./downloads/Whitepaper_PP_eng.pdf" download tabindex="0">download english whitepaper</a>
 			<br>
-			<a class="download-link esp" href="./downloads/wp_esp.txt" download tabindex="0">descargar español whitepaper</a>
+			<a class="download-link esp" href="./downloads/Whitepaper_PP_esp.pdf" download tabindex="0">descargar español whitepaper</a>
 
 		</div>
 	</div>

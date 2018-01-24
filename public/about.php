@@ -439,6 +439,21 @@ if(isset($_GET['lang'])) {
         </form>
     </div>
 </div>
+
+<div class="modal w__400" id="download">
+        <div class="close js-close-modal"><img src="images/close-red.png" alt="" title=""></div>
+        <div class="modal-content">
+            <img src="images/home/svg/wp_download_1.svg" class="m-b-30" alt="" title="">
+
+            <a class="download-link rus" href="./downloads/Whitepaper_PP_rus.pdf" download tabindex="0">скачать русский whitepaper</a>
+            <br>
+            <a class="download-link eng" href="./downloads/Whitepaper_PP_eng.pdf" download tabindex="0">download english whitepaper</a>
+            <br>
+            <a class="download-link esp" href="./downloads/Whitepaper_PP_esp.pdf" download tabindex="0">descargar español whitepaper</a>
+
+        </div>
+    </div>
+
 <div class="modal-overlay"></div>
 
 <script src="./js/jquery.min.js"></script>
