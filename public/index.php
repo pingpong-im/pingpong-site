@@ -28,6 +28,16 @@ if(isset($_GET['lang'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113098542-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-113098542-1');
+	</script>
+
 	<meta charset="UTF-8">
 	<title>Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -345,13 +355,6 @@ if(isset($_GET['lang'])) {
 					</div>
 					<p class="member__name m-b-10">Dmitry <span>Gogolev</span></p><br>
 					<p class="member__profession">Smart Contract Guru</p>
-				</div>
-				<div class="member female">
-					<div class="member__photo m-b-20">
-						<img src="./images/home/team/anna-grigorieva.png" alt="" title="">
-					</div>
-					<p class="member__name m-b-10">Anna <span>Grigoryeva</span></p><br>
-					<p class="member__profession">Project Manager</p>
 				</div>
 				<div class="member female">
 					<div class="member__photo m-b-20">

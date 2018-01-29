@@ -28,28 +28,38 @@ if(isset($_GET['lang'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113098542-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-precomposed.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+      gtag('config', 'UA-113098542-1');
+  </script>
 
-    <link rel="stylesheet" href="./js/slick/slick.css">
-    <link rel="stylesheet" href="./js/slick/slick-theme.css">
-    <link rel="stylesheet" href="css/style.min.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-precomposed.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+
+  <link rel="stylesheet" href="./js/slick/slick.css">
+  <link rel="stylesheet" href="./js/slick/slick-theme.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 
@@ -168,10 +178,10 @@ if(isset($_GET['lang'])) {
                     <?php echo $lang['pros_of_presale_description_1'] ?>
                 </li>
                 <li>
-                 <?php echo $lang['pros_of_presale_description_2'] ?>
-                 <img src="./images/about_ico/pros_of_pres/feauteres_block2.svg" alt="" title="">
-             </li>
-             <li>
+                   <?php echo $lang['pros_of_presale_description_2'] ?>
+                   <img src="./images/about_ico/pros_of_pres/feauteres_block2.svg" alt="" title="">
+               </li>
+               <li>
                 <?php echo $lang['pros_of_presale_description_3'] ?> <span class="bold">84 BTC</span>
                 <img src="./images/about_ico/pros_of_pres/punkt4_arrow_block2.svg" alt="" title="">
                 <span class="bold">1 080 ETH (60 000 PPRT)</span>
@@ -441,18 +451,18 @@ if(isset($_GET['lang'])) {
 </div>
 
 <div class="modal w__400" id="download">
-        <div class="close js-close-modal"><img src="images/close-red.png" alt="" title=""></div>
-        <div class="modal-content">
-            <img src="images/home/svg/wp_download_1.svg" class="m-b-30" alt="" title="">
+    <div class="close js-close-modal"><img src="images/close-red.png" alt="" title=""></div>
+    <div class="modal-content">
+        <img src="images/home/svg/wp_download_1.svg" class="m-b-30" alt="" title="">
 
-            <a class="download-link rus" href="./downloads/Whitepaper_PP_rus.pdf" download tabindex="0">скачать русский whitepaper</a>
-            <br>
-            <a class="download-link eng" href="./downloads/Whitepaper_PP_eng.pdf" download tabindex="0">download english whitepaper</a>
-            <br>
-            <a class="download-link esp" href="./downloads/Whitepaper_PP_esp.pdf" download tabindex="0">descargar español whitepaper</a>
+        <a class="download-link rus" href="./downloads/Whitepaper_PP_rus.pdf" download tabindex="0">скачать русский whitepaper</a>
+        <br>
+        <a class="download-link eng" href="./downloads/Whitepaper_PP_eng.pdf" download tabindex="0">download english whitepaper</a>
+        <br>
+        <a class="download-link esp" href="./downloads/Whitepaper_PP_esp.pdf" download tabindex="0">descargar español whitepaper</a>
 
-        </div>
     </div>
+</div>
 
 <div class="modal-overlay"></div>
 
